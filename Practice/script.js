@@ -82,10 +82,9 @@ d3.csv("./data/US_Textile_Fiber_Trade.csv", parse).then(function (data) {
 
     const xAxis = svg.append("g")
         .attr("class", "axis")
-            .attr("transform", `translate(0,${height - margin.bottom})`)
-            .call(d3.axisBottom().scale(xScale)).tickFormat(function(d, i){  
-                return months[i];
-            });
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom().scale(xScale).tickFormat(d3.format("Y")));
+        
 
     const yAxis = svg.append("g")
         .attr("class", "axis")
